@@ -1,0 +1,171 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+    // font-family: "Baumans", cursive;
+    font-family: "Montserrat", sans-serif;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3,
+p,
+blockquote,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1074px;
+    margin: 0 auto;
+    padding: 0 0 0 15px;
+}
+
+.wrapper {
+    max-width: 1360px;
+    padding: 0px 90px 100px 0;
+    margin: 0 auto;
+    position: relative;
+}
+
+.decoration__line {
+    position: absolute;
+    height: 94%;
+    right: 0;
+    top: 180px;
+    padding-top: 0px;
+    margin-right: 3.6%;
+    margin-left: 3.6%;
+    min-width: 25px;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    ul {
+        padding: 24px 0;
+        li + li {
+            margin-top: 21px;
+        }
+    }
+}
+
+.decoration__line-wrap {
+    height: 100%;
+    .decoration__element {
+        margin-left: 14px;
+        display: block;
+        width: 1px;
+        height: 12%;
+        background-color: #4e584d;
+    }
+}
+
+.decoration-link {
+    font-size: 25px;
+    color: #4e584d;
+}
+
+.icon-instagram::before {
+    content: "\f16d";
+}
+.icon-map-pin::before {
+    content: "\e900";
+}
+.icon-phone::before {
+    content: "\e901";
+}
+.decoration-link:hover::before {
+    text-shadow: 1px 1px 0px black;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+@mixin bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn-push {
+    padding: 17px 15px;
+    max-width: 340px;
+    overflow: hidden;
+    width: 100%;
+    background-color: #4e584d;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 0.7px;
+    font-size: 19px;
+    position: relative;
+    &::before {
+        content: "";
+        height: 100%;
+        width: 2em;
+        background-color: rgba(224, 224, 224, 0.39);
+        top: 0;
+        left: 9px;
+        position: absolute;
+        transform: translate(-10em) skewx(-45deg);
+        animation-name: btn-flare;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    &:hover {
+        box-shadow: 1px 1px 3px black;
+    }
+}
+
+@keyframes btn-flare {
+    0% {
+        transform: translate(-10em) skewx(-45deg);
+    }
+    100% {
+        transform: translate(100em) skewx(-45deg);
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.title {
+    margin-bottom: 50px;
+    font-weight: 600;
+    font-size: 36px;
+    text-align: center;
+}
+
+.fancybox-active {
+    overflow: hidden;
+}
